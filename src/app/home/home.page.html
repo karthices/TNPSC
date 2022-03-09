@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div [routerLink]="['/topic']" class="mycol">Topics</div>
+      </ion-col>
+      <ion-col>
+        <div class="mycol">Videos</div>
+      </ion-col>
+      <ion-col>
+        <div class="mycol twospan">
+          <span class="span1">
+          Question
+        </span>
+        <span class="span2">
+          Answers
+        </span>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
