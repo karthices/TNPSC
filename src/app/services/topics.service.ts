@@ -7,17 +7,31 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TopicsService {
-  url = 'http://localhost/vrtnpsc/mobileapi/getTopics';
+  url = 'http://localhost:82/vr/vrtnpsc/mobileapi/';
   apiKey = ''; // <-- Enter your own key here!
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<any> {
-    return this.http.get(`${this.url}?apikey=${this.apiKey}`).pipe(
+  getTopics(): Observable<any> {
+    return this.http.get(`${this.url}getTopics?apikey=${this.apiKey}`).pipe(
       map(results => results['topics'])
     );
   }
 
-  // getDetails(id) {
-  //   return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`);
-  // }
+  getMaterialsByTopicId(id):Observable<Material[]> {
+    return this.http.get(`${this.url}getMaterialsByTopicId/${id}?apikey=${this.apiKey}`).pipe(
+      map(results => results['materials'])
+    );
+  }
+  
+  getMaterials() :Observable<Material[]>{
+    return this.http.get(`${this.url}getMaterials?apikey=${this.apiKey}`).pipe(
+      map(results => results['materials'])
+    );
+  }
+  
+  getMaterialById(id):Observable<Material> {
+    return this.http.get(`${this.url}getMaterialById/${id}?apikey=${this.apiKey}`).pipe(
+      map(results => results['materials'])
+    );
+  }
 }

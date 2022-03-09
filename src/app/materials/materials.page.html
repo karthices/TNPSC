@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>materials</ion-title>
+    <!-- Hamburger -->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'detail', item.material_id]">
+    <ion-avatar slot="start">
+      <img [src]="item.previewimg" *ngIf="item.previewimg != ''">
+    </ion-avatar>
+    <ion-label text-wrap>
+      <h3>{{ item.title }}</h3>
+    </ion-label>
+
+    <ion-icon slot="end" *ngIf="item.type=='link'" name="videocam"></ion-icon>
+    <ion-icon slot="end" *ngIf="item.type=='pdf'" name="document-text-outline"></ion-icon>
+    <ion-icon slot="end" *ngIf="item.type=='content'" name="book-outline"></ion-icon>
+    <ion-icon slot="end" *ngIf="item.type=='quiz'" name="help-outline"></ion-icon>
+  </ion-item>
+</ion-content>

@@ -28,6 +28,24 @@ const routes: Routes = [
     path: 'topic',
     loadChildren: () => import('./topic/topic.module').then( m => m.TopicPageModule)
   },
+  // {
+  //   path: 'topic/:id',
+  //   loadChildren: () => import('./topic/topic.module').then( m => m.TopicPageModule)
+  // },
+  {
+    path: 'detail/:material_id',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'materials',
+    loadChildren: () => import('./materials/materials.module').then( m => m.MaterialsPageModule)
+  },
+  {
+    path: 'materials/:topic_id',
+    loadChildren: () => import('./materials/materials.module').then( m => m.MaterialsPageModule)
+  },
+
+
 ];
 
 @NgModule({

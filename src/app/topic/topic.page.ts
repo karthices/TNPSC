@@ -12,7 +12,7 @@ export class TopicPage implements OnInit {
   constructor(private topicsService: TopicsService) { }
 
   ngOnInit() {
-    this.results = this.topicsService.getData();
+    this.results = this.topicsService.getTopics();
   }
 
 }

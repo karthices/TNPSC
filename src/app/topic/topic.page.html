@@ -1,27 +1,24 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>topic</ion-title>
+    <!-- Hamburger -->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
- 
-    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.imdbID]">
-      <ion-avatar slot="start">
-        <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'">
-      </ion-avatar>
- 
+    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'materials', item.topic_id]">
+       
       <ion-label text-wrap>
-        <h3>{{ item.Title }}</h3>
-        {{ item.Year }}
+        <h3>{{ item.title }}</h3>
       </ion-label>
- 
-      <ion-icon slot="end" *ngIf="item.Type == 'movie'" name="videocam"></ion-icon>
-      <ion-icon slot="end" *ngIf="item.Type == 'series'" name="tv"></ion-icon>
-      <ion-icon slot="end" *ngIf="item.Type == 'game'" name="logo-game-controller-b"></ion-icon>
- 
-    </ion-item>
+     </ion-item>
  
   </ion-list>
 </ion-content>

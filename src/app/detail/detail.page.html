@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detail</ion-title>
+    <!-- Hamburger -->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  {{results?.previewimg}}
+  <img [src]="results" *ngIf="results.previewimg != ''">
+  <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'detail', item.topic_id]">
+       
+    <ion-label text-wrap>
+      <h3>{{ item.title }}</h3>
+      
+    </ion-label>
+
+    <ion-icon slot="end" name="videocam"></ion-icon>
+  </ion-item>
+</ion-content>
