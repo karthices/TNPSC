@@ -1,0 +1,7 @@
+{
+  "name": "TNPSC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
