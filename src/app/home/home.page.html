@@ -20,6 +20,19 @@
       <ion-col>
         <div class="mycol twospan">
           <span class="span1">
+          Study
+        </span>
+        <span class="span2">
+          Materials
+        </span>
+      </div>
+      </ion-col>
+      
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="mycol twospan">
+          <span class="span1">
           Question
         </span>
         <span class="span2">
@@ -27,6 +40,13 @@
         </span>
       </div>
       </ion-col>
+      <ion-col>
+        <div [routerLink]="['/subjects']" class="mycol">Test</div>
+      </ion-col>
+      <ion-col>
+        <div class="mycol">Quiz</div>
+      </ion-col>
+      
     </ion-row>
   </ion-grid>
 </ion-content>

@@ -1,4 +1,4 @@
-interface Material {
+export interface Material {
     material_id: string;
     category: string;
   material_status: string;

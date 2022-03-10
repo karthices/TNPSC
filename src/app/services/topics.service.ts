@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Material } from '../classes/Material';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopicsService {
-  url = 'http://localhost:82/vr/vrtnpsc/mobileapi/';
+  // url = 'http://localhost:82/vr/vrtnpsc/mobileapi/';
+  // url = 'http://localhost/vrtnpsc/mobileapi/';
+  url = 'https://tnpsc.u10.in/mobileapi/';
   apiKey = ''; // <-- Enter your own key here!
   constructor(private http: HttpClient) { }
 
@@ -31,7 +34,7 @@ export class TopicsService {
   
   getMaterialById(id):Observable<Material> {
     return this.http.get(`${this.url}getMaterialById/${id}?apikey=${this.apiKey}`).pipe(
-      map(results => results['materials'])
+      map(results => results['material'])
     );
   }
 }
