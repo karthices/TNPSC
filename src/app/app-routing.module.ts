@@ -11,10 +11,6 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  // {
-  //   path: 'home/:id',
-  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  // },
   {
     path:'folder',
     redirectTo:'folder',
@@ -28,10 +24,6 @@ const routes: Routes = [
     path: 'topic',
     loadChildren: () => import('./topic/topic.module').then( m => m.TopicPageModule)
   },
-  // {
-  //   path: 'topic/:id',
-  //   loadChildren: () => import('./topic/topic.module').then( m => m.TopicPageModule)
-  // },
   {
     path: 'detail/:material_id',
     loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
